@@ -7,7 +7,8 @@
 //
 
 #import "ViewController.h"
-
+#import "FileManager.h"
+#import "MgCache.h"
 @interface ViewController ()
 
 @end
@@ -16,7 +17,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    MgCache *mCache = [MgCache getMgCache];
+    MgCache *mCache2 = [MgCache getMgCache:@"dd"];
+
+    
+    //[mCache putValue:@"123" forKey:@"121212" saveTime:5];
+   // [mCache2 putValue:@"123aaa" forKey:@"eeeeeee" saveTime:5];
+
+    
+    NSString *value = [mCache getAsString:@"121212"];
+     NSString *value2 = [mCache2 getAsString:@"eeeeeee"];
+    
+    [_label setText:value2];
+    
 }
 
 - (void)didReceiveMemoryWarning {

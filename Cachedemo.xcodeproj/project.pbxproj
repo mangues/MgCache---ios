@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F6054A3A1C30DAC400A3B92C /* FileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6054A311C30DAC400A3B92C /* FileManager.m */; };
+		F6054A3B1C30DAC400A3B92C /* MgCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F6054A331C30DAC400A3B92C /* MgCache.m */; };
+		F6054A3C1C30DAC400A3B92C /* MgCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F6054A351C30DAC400A3B92C /* MgCacheManager.m */; };
+		F6054A3D1C30DAC400A3B92C /* MgUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F6054A371C30DAC400A3B92C /* MgUtil.m */; };
+		F6054A3E1C30DAC400A3B92C /* NSString+MD5Encrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = F6054A391C30DAC400A3B92C /* NSString+MD5Encrypt.m */; };
 		F66376321C2D088400FE9261 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F66376311C2D088400FE9261 /* main.m */; };
 		F66376351C2D088400FE9261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F66376341C2D088400FE9261 /* AppDelegate.m */; };
 		F66376381C2D088400FE9261 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66376371C2D088400FE9261 /* ViewController.m */; };
@@ -35,6 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F6054A301C30DAC400A3B92C /* FileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileManager.h; sourceTree = "<group>"; };
+		F6054A311C30DAC400A3B92C /* FileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileManager.m; sourceTree = "<group>"; };
+		F6054A321C30DAC400A3B92C /* MgCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MgCache.h; sourceTree = "<group>"; };
+		F6054A331C30DAC400A3B92C /* MgCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MgCache.m; sourceTree = "<group>"; };
+		F6054A341C30DAC400A3B92C /* MgCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MgCacheManager.h; sourceTree = "<group>"; };
+		F6054A351C30DAC400A3B92C /* MgCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MgCacheManager.m; sourceTree = "<group>"; };
+		F6054A361C30DAC400A3B92C /* MgUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MgUtil.h; sourceTree = "<group>"; };
+		F6054A371C30DAC400A3B92C /* MgUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MgUtil.m; sourceTree = "<group>"; };
+		F6054A381C30DAC400A3B92C /* NSString+MD5Encrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Encrypt.h"; sourceTree = "<group>"; };
+		F6054A391C30DAC400A3B92C /* NSString+MD5Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Encrypt.m"; sourceTree = "<group>"; };
 		F663762D1C2D088400FE9261 /* Cachedemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cachedemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66376311C2D088400FE9261 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F66376331C2D088400FE9261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F6054A2F1C30DA8A00A3B92C /* MgCache */ = {
+			isa = PBXGroup;
+			children = (
+				F6054A301C30DAC400A3B92C /* FileManager.h */,
+				F6054A311C30DAC400A3B92C /* FileManager.m */,
+				F6054A321C30DAC400A3B92C /* MgCache.h */,
+				F6054A331C30DAC400A3B92C /* MgCache.m */,
+				F6054A341C30DAC400A3B92C /* MgCacheManager.h */,
+				F6054A351C30DAC400A3B92C /* MgCacheManager.m */,
+				F6054A361C30DAC400A3B92C /* MgUtil.h */,
+				F6054A371C30DAC400A3B92C /* MgUtil.m */,
+				F6054A381C30DAC400A3B92C /* NSString+MD5Encrypt.h */,
+				F6054A391C30DAC400A3B92C /* NSString+MD5Encrypt.m */,
+			);
+			path = MgCache;
+			sourceTree = "<group>";
+		};
 		F66376241C2D088400FE9261 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +133,7 @@
 		F663762F1C2D088400FE9261 /* Cachedemo */ = {
 			isa = PBXGroup;
 			children = (
+				F6054A2F1C30DA8A00A3B92C /* MgCache */,
 				F66376331C2D088400FE9261 /* AppDelegate.h */,
 				F66376341C2D088400FE9261 /* AppDelegate.m */,
 				F66376361C2D088400FE9261 /* ViewController.h */,
@@ -272,7 +305,12 @@
 			files = (
 				F66376381C2D088400FE9261 /* ViewController.m in Sources */,
 				F66376351C2D088400FE9261 /* AppDelegate.m in Sources */,
+				F6054A3B1C30DAC400A3B92C /* MgCache.m in Sources */,
 				F66376321C2D088400FE9261 /* main.m in Sources */,
+				F6054A3C1C30DAC400A3B92C /* MgCacheManager.m in Sources */,
+				F6054A3A1C30DAC400A3B92C /* FileManager.m in Sources */,
+				F6054A3E1C30DAC400A3B92C /* NSString+MD5Encrypt.m in Sources */,
+				F6054A3D1C30DAC400A3B92C /* MgUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +536,7 @@
 				F663765C1C2D088500FE9261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F663765D1C2D088500FE9261 /* Build configuration list for PBXNativeTarget "CachedemoTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +545,7 @@
 				F663765F1C2D088500FE9261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F66376601C2D088500FE9261 /* Build configuration list for PBXNativeTarget "CachedemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +554,7 @@
 				F66376621C2D088500FE9261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
