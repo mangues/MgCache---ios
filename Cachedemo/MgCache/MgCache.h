@@ -15,4 +15,5 @@
 - (void)putValue:(NSString*)value forKey:(NSString*)key;
 - (void)putValue:(NSString*)value forKey:(NSString*)key saveTime:(int) saveTime;
 - (NSString*)getAsString:(NSString*)key;
+- (BOOL)isSame:(NSString*)value forKey:(NSString*)key;
 @end

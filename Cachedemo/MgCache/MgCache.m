@@ -80,4 +80,8 @@ NSMutableDictionary* mgCacheMap;
     }
 }
 
+
+- (BOOL)isSame:(NSString*)value forKey:(NSString*)key{
+    return [_mCache isSame:value forKey:key];
+}
 @end

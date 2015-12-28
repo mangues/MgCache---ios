@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "MgDefine.h"
 @interface MgUtil : NSObject
 + (NSString*)newStringWithDateInfo:(int)saveTime content:(NSString*)value;
 + (BOOL)isDue:(NSString*)str;

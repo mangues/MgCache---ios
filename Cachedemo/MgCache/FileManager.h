@@ -7,17 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-//有返回值
-#define SAFE_OBJECT_OF_ARRAY_AT_INDEX(_ARRAY_,_INDEX_) ((_ARRAY_)&&(_INDEX_>=0)&&(_INDEX_<[_ARRAY_ count])?([_ARRAY_ objectAtIndex:_INDEX_]):(nil))
-
-//解决截取字符串的问题
-#define SAFE_SUBSTRING_TO_INDEX(_STR_,_INX_) ((_INX_ <= [_STR_ length])? ([_STR_ substringToIndex:_INX_]):(nil))
-
-//解决将空值加入数组造造成的崩溃
-
-#define SAFE_ADD_OBJECT_INTO_ARRAY(_ARRAY_,_OBJ_) ((_OBJ_)? ([_ARRAY_ addObject:_OBJ_]) : (nil))
-
-#define DLog(...) NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSString stringWithFormat:__VA_ARGS__])
+#import "MgDefine.h"
 
 
 @interface FileManager : NSObject

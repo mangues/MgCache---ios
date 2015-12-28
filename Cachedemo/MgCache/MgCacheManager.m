@@ -40,7 +40,7 @@
     NSArray *arrayFile = [FileManager getAllFileNames:cacheDir];
     [arrayFile enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         NSArray *array_first = [obj componentsSeparatedByString:@"_"];
-        NSString *first_string = array_first[0];
+        NSString *first_string = SAFE_OBJECT_OF_ARRAY_AT_INDEX(array_first,0);
         if ([key isEqualToString:first_string]) {
             fileName = obj;
         }
@@ -49,10 +49,33 @@
      return fileDir;
 }
 
+//获取缓存文件的md5
+- (NSString*)getFileMd5:(NSString*)key {
+    __block NSString *fileMd5 = @"";
+    NSArray *arrayFile = [FileManager getAllFileNames:cacheDir];
+    [arrayFile enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSArray *array_first = [obj componentsSeparatedByString:@"_"];
+        NSString *first_string = SAFE_OBJECT_OF_ARRAY_AT_INDEX(array_first,0);
+        if ([key isEqualToString:first_string]) {
+            fileMd5 = SAFE_OBJECT_OF_ARRAY_AT_INDEX(array_first,1);
+        }
+    }];
+    return fileMd5;
+}
+
 
 //删除文件
 - (BOOL)removeFile:(NSString*)fileDir{
     return [FileManager deleteFile:fileDir];
+}
+
+
+- (BOOL)isSame:(NSString*)value forKey:(NSString*)key{
+    ///相同
+    if ([[self getFileMd5:key] isEqualToString:[value md5Encrypt]]) {
+        return YES;
+    }else
+        return NO;
 }
 
 @end

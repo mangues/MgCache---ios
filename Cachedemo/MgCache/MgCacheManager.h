@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "MgDefine.h"
 @interface MgCacheManager : NSObject
 - (id)init:(NSString*)cacheDir;
 - (NSString*)newFile:(NSString*)key andValue:(NSString*)value;
 - (NSString*)getFileDir:(NSString*)key;
 - (BOOL)removeFile:(NSString*)fileDir;
+- (BOOL)isSame:(NSString*)value forKey:(NSString*)key;
 @end

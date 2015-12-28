@@ -27,13 +27,14 @@ NSString*  mSeparator = @"~~--~~oo~~--~~oo~~--~~oo~~--~~";
 + (BOOL)isDue:(NSString*)str{
     NSArray* array = [MgUtil getDateInfoFromDate:str];
     if (array!=nil&&array.count >=2) {
-        NSString * saveTimeStr = array[0];
+        NSString * saveTimeStr = SAFE_OBJECT_OF_ARRAY_AT_INDEX(array,0);
         while ([saveTimeStr hasPrefix:@"0"]) {
-            saveTimeStr = [saveTimeStr substringFromIndex:1];
+            saveTimeStr = SAFE_SUBSTRING_TO_INDEX(saveTimeStr,1);
+            
         }
         NSTimeInterval time=[[NSDate date] timeIntervalSince1970]*1000;
         double saveTime = [saveTimeStr doubleValue];
-        double deleteAfter = [array[1] doubleValue];
+        double deleteAfter = [SAFE_OBJECT_OF_ARRAY_AT_INDEX(array,1) doubleValue];
         if (time>saveTime+deleteAfter*1000) {
             return YES;
         }
@@ -43,12 +44,14 @@ NSString*  mSeparator = @"~~--~~oo~~--~~oo~~--~~oo~~--~~";
 //获取实际内容
 +(NSString*)clearDateInfo:(NSString*)strInfo {
       NSArray *array = nil;
-    if (strInfo!=nil&&[MgUtil hasDateInfo:strInfo]) {
+    if (strInfo!=nil&&[MgUtil hasDateInfo:strInfo]) {  //有时间
             array = [strInfo componentsSeparatedByString:mSeparator];
+    }else{
+         return strInfo;
     }
     NSString *returnStr = nil;
     if (array!=nil&&array.count==3) {
-        returnStr = array[2];
+        returnStr = SAFE_OBJECT_OF_ARRAY_AT_INDEX(array,2);
     }
     return returnStr;
 }

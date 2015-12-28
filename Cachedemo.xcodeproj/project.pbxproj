@@ -50,6 +50,7 @@
 		F6054A371C30DAC400A3B92C /* MgUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MgUtil.m; sourceTree = "<group>"; };
 		F6054A381C30DAC400A3B92C /* NSString+MD5Encrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5Encrypt.h"; sourceTree = "<group>"; };
 		F6054A391C30DAC400A3B92C /* NSString+MD5Encrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5Encrypt.m"; sourceTree = "<group>"; };
+		F6054A6A1C31050F00A3B92C /* MgDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MgDefine.h; sourceTree = "<group>"; };
 		F663762D1C2D088400FE9261 /* Cachedemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cachedemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66376311C2D088400FE9261 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F66376331C2D088400FE9261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +107,7 @@
 				F6054A371C30DAC400A3B92C /* MgUtil.m */,
 				F6054A381C30DAC400A3B92C /* NSString+MD5Encrypt.h */,
 				F6054A391C30DAC400A3B92C /* NSString+MD5Encrypt.m */,
+				F6054A6A1C31050F00A3B92C /* MgDefine.h */,
 			);
 			path = MgCache;
 			sourceTree = "<group>";

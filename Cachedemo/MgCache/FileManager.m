@@ -27,14 +27,15 @@
 +(void)dirLib{
     //[NSHomeDirectory() stringByAppendingPathComponent:@"Library"];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *libraryDirectory = [paths objectAtIndex:0];
+    NSString *libraryDirectory = SAFE_OBJECT_OF_ARRAY_AT_INDEX(paths,0);
+    
     DLog(@"app_home_lib: %@",libraryDirectory);
 }
 
 //获取Cache目录
 +(NSString*)dirCache{
     NSArray *cacPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString *cachePath = [cacPath objectAtIndex:0];
+    NSString *cachePath = SAFE_OBJECT_OF_ARRAY_AT_INDEX(cacPath,0);
     DLog(@"app_home_lib_cache: %@",cachePath);
     return cachePath;
 }
@@ -107,7 +108,7 @@
     int count = [keys count];
     for (int i = 0; i < count; i++)
     {
-        key = [keys objectAtIndex: i];
+        key = SAFE_OBJECT_OF_ARRAY_AT_INDEX(keys,1);
         value = [fileAttributes objectForKey: key];
         DLog (@"Key: %@ for value: %@", key, value);
     }
