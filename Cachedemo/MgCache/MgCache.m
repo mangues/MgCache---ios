@@ -51,6 +51,32 @@ NSMutableDictionary* mgCacheMap;
     }
     return manager;
 }
+
+
+//清楚缓存
++ (BOOL)removeMgCache{
+    return [MgCache removeMgCache:@"startCity" time:72000];  //20小时清除一次文件夹
+}
+
++ (BOOL)removeMgCache:(NSString*)cacheName time:(int)deleteTime{
+    NSString *documentsPath =[FileManager dirCache];
+    NSString *testDirectory = [documentsPath stringByAppendingPathComponent:cacheName];
+    if ([FileManager isExist:testDirectory]) { //存在
+        NSDictionary* dic = [FileManager fileAttriutes:testDirectory];
+        NSDate* ModificationData = [dic objectForKey:NSFileModificationDate];
+        
+        NSTimeInterval saveTime=[ModificationData timeIntervalSince1970]*1000;
+        NSTimeInterval time=[[NSDate date] timeIntervalSince1970]*1000;
+        if (time>saveTime+deleteTime*1000) {
+            return  [FileManager deleteFile:testDirectory];
+            DLog(@"%@",ModificationData);
+        }
+    }
+    return NO;
+}
+
+
+
 //存入数据
 - (void)putValue:(NSString*)value forKey:(NSString*)key{
     NSString* fileDir = [_mCache newFile:key andValue:value];   //创建文件

@@ -96,12 +96,9 @@
 
 
 //文件属性
-+ (void)fileAttriutes{
-    NSString *documentsPath =[FileManager dirDoc];
-    NSString *testDirectory = [documentsPath stringByAppendingPathComponent:@"test"];
++ (NSDictionary*)fileAttriutes:(NSString*)fileDir{
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSString *testPath = [testDirectory stringByAppendingPathComponent:@"test.txt"];
-    NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:testPath error:nil];
+    NSDictionary *fileAttributes = [fileManager attributesOfItemAtPath:fileDir error:nil];
     NSArray *keys;
     id key, value;
     keys = [fileAttributes allKeys];
@@ -112,6 +109,7 @@
         value = [fileAttributes objectForKey: key];
         DLog (@"Key: %@ for value: %@", key, value);
     }
+    return fileAttributes;
 }
 
 //删除文件
@@ -131,6 +129,19 @@
 {
     NSArray *files = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:dirName error:nil];
     return files;
+}
+
+
+//判断文件夹是否存在
++(BOOL)isExist:(NSString*)fileDir{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL isDir = FALSE;
+    BOOL isDirExist = [fileManager fileExistsAtPath:fileDir isDirectory:&isDir];
+    if(isDirExist && isDir) {
+        return YES;
+    }else{
+        return NO;
+    }
 }
 
 @end

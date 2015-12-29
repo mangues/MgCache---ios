@@ -36,10 +36,11 @@
 
 
 //文件属性
-+ (void)fileAttriutes;
++ (NSDictionary*)fileAttriutes:(NSString*)fileDir;
 
 //删除文件
 + (BOOL)deleteFile:(NSString*)fileDir;
 
 + (NSArray *) getAllFileNames:(NSString *)dirName;
++ (BOOL)isExist:(NSString*)fileDir;
 @end

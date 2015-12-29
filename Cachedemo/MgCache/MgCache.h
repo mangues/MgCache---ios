@@ -16,4 +16,6 @@
 - (void)putValue:(NSString*)value forKey:(NSString*)key saveTime:(int) saveTime;
 - (NSString*)getAsString:(NSString*)key;
 - (BOOL)isSame:(NSString*)value forKey:(NSString*)key;
++ (BOOL)removeMgCache;
++ (BOOL)removeMgCache:(NSString*)cacheName time:(int)deleteTime;
 @end
